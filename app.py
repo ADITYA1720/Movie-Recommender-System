@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+pip install -r requirements.txt
 
 df = pd.read_csv('ratings.csv')
 
