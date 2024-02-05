@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 from sklearn.model_selection import train_test_split
@@ -51,7 +51,7 @@ xgb = XGBRegressor(objective='reg:squarederror',
 xgb.fit(X_train, y_train)
 preds = xgb.predict(X_test)
 
-user_id = st.number_input("Enter User ID")
+user_id = int(st.number_input("Enter User ID "))
 # if user_id:
 #     try:
 #         user_input_int = int(user_id)
@@ -132,8 +132,10 @@ def get_recommendation(similar_movies_index):
     predicted_rating = xgb.predict(np.array(get_genre_embedding(1)).reshape(1,-1))
     recommendations.append((movie_title, predicted_rating[0]))
   return recommendations
-st.write("========================================================")
+
+st.write("=========================================================")
 st.write(f"Recommended Movies and Predicted Ratings for {user_id} are")
+
 my_recommendations = get_recommendation(similar_movies_index)
 for i,tup in enumerate(my_recommendations):
    st.write(f"{i+1}. {tup[0]} ")
