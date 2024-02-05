@@ -133,7 +133,7 @@ def get_recommendation(similar_movies_index):
     recommendations.append((movie_title, predicted_rating[0]))
   return recommendations
 st.write("========================================================")
-st.write("Recommended Movies and Predicted Ratings for {user_id} are")
+st.write(f"Recommended Movies and Predicted Ratings for {user_id} are")
 my_recommendations = get_recommendation(similar_movies_index)
 for i,tup in enumerate(my_recommendations):
    st.write(f"{i+1}. {tup[0]} ")
