@@ -1,4 +1,6 @@
 # Movie-Recommender-System
+Login:
+The login will happen if you enter a user ID which is already present in the data. Any password can be entered for a successful authentication.
 
 In this repository, I used two approaches.
 
