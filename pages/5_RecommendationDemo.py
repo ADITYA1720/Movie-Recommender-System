@@ -51,7 +51,7 @@ xgb = XGBRegressor(objective='reg:squarederror',
 xgb.fit(X_train, y_train)
 preds = xgb.predict(X_test)
 
-user_id = st.number_input("Enter User ID ")
+user_id = st.number_input("Integer", 1, 610, "Enter User ID ")
 # if user_id:
 #     try:
 #         user_input_int = int(user_id)
